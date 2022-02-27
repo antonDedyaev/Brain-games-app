@@ -11,5 +11,4 @@ jobs:
 
     steps:
       - name: check
-      - run: make lint
-      
+        run: make lint
