@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "first project in hexlet-js-training",
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js"
   },
   "main": "index.js",
   "scripts": {
