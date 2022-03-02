@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
-import guessEvenNums from '../src/even-logic.js';
+import guessEvenNums from '../src/games/even-logic.js';
 
 guessEvenNums();
