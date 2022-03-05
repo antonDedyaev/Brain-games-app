@@ -15,9 +15,7 @@ const gameAnswers = () => {
   const randomNum1 = getRandomInt(100);
   const randomNum2 = getRandomInt(100);
   const operator = randomOperator(3);
-
   const askQuestion = `${randomNum1} ${operator} ${randomNum2}`;
-
   let result;
   switch (operator) {
     case '+':
