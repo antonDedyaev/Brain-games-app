@@ -1,13 +1,11 @@
-import commonLogic from '../index.js';
+import defineCommonLogic from '../index.js';
+import getRandomInt from '../utils.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
-const gameAnswers = () => {
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-  const randomNum1 = getRandomInt(100);
-  const randomNum2 = getRandomInt(100);
+const getAnswers = () => {
+  const randomNum1 = getRandomInt(0, 100);
+  const randomNum2 = getRandomInt(0, 100);
 
   const askQuestion = `${randomNum1} ${randomNum2}`;
 
@@ -23,5 +21,5 @@ const gameAnswers = () => {
   const referenceAnswer = String(result1 + result2);
   return [askQuestion, referenceAnswer];
 };
-const findCommonDiv = () => commonLogic(gameTask, gameAnswers);
+const findCommonDiv = () => defineCommonLogic(gameTask, getAnswers);
 export default findCommonDiv;

@@ -1,12 +1,9 @@
-import commonLogic from '../index.js';
+import defineCommonLogic from '../index.js';
+import getRandomInt from '../utils.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const gameAnswers = () => {
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
+const getAnswers = () => {
   const askQuestion = getRandomInt(2, 100);
   let isPrime;
 
@@ -21,5 +18,5 @@ const gameAnswers = () => {
   const referenceAnswer = isPrime;
   return [askQuestion, referenceAnswer];
 };
-const guessPrimeNums = () => commonLogic(gameTask, gameAnswers);
+const guessPrimeNums = () => defineCommonLogic(gameTask, getAnswers);
 export default guessPrimeNums;

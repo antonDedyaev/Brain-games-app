@@ -1,12 +1,9 @@
-import commonLogic from '../index.js';
+import defineCommonLogic from '../index.js';
+import getRandomInt from '../utils.js';
 
 const gameTask = 'What number is missing in the progression?';
 
-const gameAnswers = () => {
-  function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
-  }
-
+const getAnswers = () => {
   const firstNum = getRandomInt(1, 30);
   const difference = getRandomInt(1, 9);
   const progressionNums = [];
@@ -22,5 +19,5 @@ const gameAnswers = () => {
   const askQuestion = finalProgression.join(' ');
   return [askQuestion, referenceAnswer];
 };
-const completeProgression = () => commonLogic(gameTask, gameAnswers);
+const completeProgression = () => defineCommonLogic(gameTask, getAnswers);
 export default completeProgression;
