@@ -8,14 +8,15 @@ Brain games
 Welcome to the Brain games! There are 5 mini-games with 3 rounds each. You need to answer all questions correctly to finish the games. If your answer is wrong, the game will stop and you'll have to start the game again. Good luck!
 
 Installation:
-1) Clone the repository using the following command:
+1. Clone the repository using the following command:
 
 git clone https://github.com/Aintdead86/frontend-project-lvl1.git
-2) Install the Brain games using the following commands:
 
-1. make install
+2. Install the Brain games using the following commands:
 
-2. npm link
+- make install
+
+- npm link
 
 Game I. Brain-even
 
