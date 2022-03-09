@@ -1,19 +1,18 @@
 import readlineSync from 'readline-sync';
 
-const commonLogic = (gameTask, gameAnswers) => {
+const defineCommonLogic = (gameTask, getAnswers) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(gameTask);
 
-  let counter = 0;
-  while (counter < 3) {
-    const [askQuestion, referenceAnswer] = gameAnswers();
+  const numOfRounds = 3;
+  for (let counter = 0; counter < numOfRounds; counter += 1) {
+    const [askQuestion, referenceAnswer] = getAnswers();
     console.log(`Question: ${askQuestion}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === referenceAnswer) {
       console.log('Correct!');
-      counter += 1;
     } else {
       console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${referenceAnswer}'. Let's try again, ${userName}!`);
       return;
@@ -21,4 +20,4 @@ const commonLogic = (gameTask, gameAnswers) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-export default commonLogic;
+export default defineCommonLogic;
