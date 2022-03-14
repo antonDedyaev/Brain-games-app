@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
 
-const defineCommonLogic = (gameTask, getAnswers) => {
+const runGame = (gameTask, getAnswers) => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
@@ -20,4 +20,4 @@ const defineCommonLogic = (gameTask, getAnswers) => {
   }
   console.log(`Congratulations, ${userName}!`);
 };
-export default defineCommonLogic;
+export default runGame;
