@@ -1,9 +1,12 @@
-import defineCommonLogic from '../index.js';
+import runGame from '../index.js';
 import getRandomInt from '../utils.js';
 
-const isPrime = (Num) => {
-  for (let i = 2; i <= Math.sqrt(Num); i += 1) {
-    if (Num % i === 0) {
+const isPrime = (num) => {
+  if (num <= 1) {
+    return 'no';
+  }
+  for (let i = 2; i <= Math.sqrt(num); i += 1) {
+    if (num % i === 0) {
       return 'no';
     }
   }
@@ -16,5 +19,5 @@ const getAnswers = () => {
   const referenceAnswer = isPrime(askQuestion);
   return [askQuestion, referenceAnswer];
 };
-const guessPrimeNums = () => defineCommonLogic(gameTask, getAnswers);
+const guessPrimeNums = () => runGame(gameTask, getAnswers);
 export default guessPrimeNums;
