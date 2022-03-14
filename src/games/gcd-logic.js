@@ -1,9 +1,9 @@
-import defineCommonLogic from '../index.js';
+import runGame from '../index.js';
 import getRandomInt from '../utils.js';
 
-const getGcd = (Num1, Num2) => {
-  let firstNum = Num1;
-  let secondNum = Num2;
+const getGcd = (num1, num2) => {
+  let firstNum = num1;
+  let secondNum = num2;
   while (firstNum !== 0 && secondNum !== 0) {
     if (firstNum > secondNum) {
       firstNum %= secondNum;
@@ -23,5 +23,5 @@ const getAnswers = () => {
   const referenceAnswer = String(getGcd(randomNum1, randomNum2));
   return [askQuestion, referenceAnswer];
 };
-const findCommonDiv = () => defineCommonLogic(gameTask, getAnswers);
+const findCommonDiv = () => runGame(gameTask, getAnswers);
 export default findCommonDiv;

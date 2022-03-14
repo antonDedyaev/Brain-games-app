@@ -1,10 +1,10 @@
-import defineCommonLogic from '../index.js';
+import runGame from '../index.js';
 import getRandomInt from '../utils.js';
 
-const getProgression = (Num1, Num2) => {
+const getProgression = (num1, num2) => {
   const progressionNums = [];
   const limitNum = 100;
-  for (let i = Num1; i < limitNum; i += Num2) {
+  for (let i = num1; i < limitNum; i += num2) {
     progressionNums.push(i);
   }
   return progressionNums.slice(0, 10);
@@ -22,5 +22,5 @@ const getAnswers = () => {
   const askQuestion = finalProgression.join(' ');
   return [askQuestion, referenceAnswer];
 };
-const completeProgression = () => defineCommonLogic(gameTask, getAnswers);
+const completeProgression = () => runGame(gameTask, getAnswers);
 export default completeProgression;
